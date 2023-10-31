@@ -26,6 +26,9 @@ import {
 } from "@ionic/vue";
 import { defineComponent, markRaw } from "vue";
 
+// Using this import it works!
+// import PageTwo from "./PageTwo.vue";
+
 export default {
   components: {
     IonHeader,
@@ -35,8 +38,8 @@ export default {
     IonNavLink,
     IonButton,
   },
-  data() {
-    const PageTwo = defineComponent(() => `<h1>Page two</h1>`);
+  setup() {
+    const PageTwo = defineComponent({ template: `<div><h1>Page two</h1></div>` });
     return {
       component: markRaw(PageTwo)
     };
