@@ -24,7 +24,7 @@ import {
   IonNavLink,
   IonButton,
 } from "@ionic/vue";
-import PageTwo from "./PageTwo.vue";
+import { defineComponent, markRaw } from "vue";
 
 export default {
   components: {
@@ -36,8 +36,9 @@ export default {
     IonButton,
   },
   data() {
+    const PageTwo = defineComponent(() => `<h1>Page two</h1>`);
     return {
-      component: PageTwo,
+      component: markRaw(PageTwo)
     };
   },
 };
